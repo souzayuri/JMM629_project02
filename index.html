@@ -10,32 +10,30 @@
     <link rel="stylesheet" href="style.css">
     <!-- Import Bungee font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-     <!-- Mapbox GL JS -->
-
-     <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
-     <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet" />
-
-
-
+    <!-- Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet" />
 </head>
-<body> 
-    <!-- videos -->
-    <h1>Tapir Diel Activity Patterns</h1>
-    <div class="video-wrapper">
-        <div class="video-container">
-            <video class="video-player" src="anta2.MP4" type="video/MP4" loop muted controls></video>
+<body>
+    <h1>Tapir's diel activity patterns</h1>
+    <div class="layout-container">
+        <div class="main-content">
+            <!-- Chart container on top -->
+            <div id="chart-container">
+            </div>
+            
+            <!-- Video container below chart -->
+            <div class="video-container">
+                <video class="video-player" src="anta2.MP4" type="video/MP4" loop muted controls>
+                </video>
+            </div>
         </div>
-    </div> 
-
-    <!-- Add white space between videos and legend -->
-    <div style="height: 20px;"></div>
-
-    <!-- charts -->
-    <div id="chart-container"></div> <!-- to hold all the individual plots -->
-        <!-- teste -->
-
-            <!-- Map container -->
-    <div id="map"></div>
+        
+        <!-- Map container on the side -->
+        <div id="map">
+            Map Content Goes Here
+        </div>
+    </div>
 </body>
 </html>
 

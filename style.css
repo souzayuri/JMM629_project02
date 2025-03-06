@@ -1,158 +1,186 @@
 /* Apply styles to the entire page */
 body {
-    font-family: 'Bungee', cursive !important; /* Use 'Bungee' font with cursive fallback, enforce it */
-    background-color: #f5f5f5; /* Light grey background for a clean look */
-    text-align: center; /* Center all text in the body */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+  font-family: 'Bungee', cursive !important; /* Use 'Bungee' font with cursive fallback, enforce it */
+  background-color: #f5f5f5; /* Light grey background for a clean look */
+  text-align: center; /* Center all text in the body */
+  margin: 0; /* Remove default margin */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Layout container setup */
+.layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 600px; /* Set a minimum height for the entire layout */
+}
+
+.main-content {
+  flex: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Let content determine height */
 }
 
 /* Style the main heading (h1) */
 h1 {
-    text-align: center; /* Center align heading */
-    font-family: "Bungee"; /* Use the custom font defined in the HTML*/
-    color: #475d57; /* Dark grey-green color for contrast */
+  text-align: center; /* Center align heading */
+  font-family: "Bungee"; /* Use the custom font defined in the HTML*/
+  color: #475d57; /* Dark grey-green color for contrast */
 }
 
 /* Wrapper for the video section */
 .video-wrapper {
-    display: flex; /* Arrange videos in a horizontal row */
-    justify-content: center; /* Evenly distribute space between videos */
-    gap: 20px; /* Add spacing between video elements */
-    padding: 20px; /* Add padding around the container */
+  display: flex; /* Arrange videos in a horizontal row */
+  justify-content: center; /* Evenly distribute space between videos */
+  gap: 0px; /* Add spacing between video elements */
+  padding: 0px; /* Add padding around the container */
 }
 
-/* Each individual video container */
 .video-container {
-    width: 30%; /* Make sure videos take full width of their container */
-    cursor: pointer; /* Indicate that videos can be clicked */
+  flex: 2; /* Allocate more space to video */
+  overflow: hidden; /* Prevent overflow */
 }
 
-/* Video element styles */
-video {
-    width: 100%; /* Ensure videos fill their container */
-    height: auto; /* Maintain aspect ratio */
+.video-player {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer; /* Indicate that videos can be clicked */
+  border-radius: 4px;
 }
 
 /* Main container styling */
 #chart-container {
-    padding: 5px; /* Padding around the grid */
-    justify-content: center; /* Center align content */
-    color: #475d57; /* Dark grey-green text color */
-    font-family: "Bungee"; /* Use the custom font defined in the HTML*/
-    margin: 0 auto;
-    font-size: 20px;
+  /* background-color: black; */
+  padding: 0px; /* Padding around the grid */
+  color: #475d57; /* Dark grey-green text color */
+  font-family: "Bungee"; /* Use the custom font defined in the HTML*/
+  margin: 0 auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  /* border: 1px solid #ccc; */
+  flex: 1; /* Take 1/3 of the vertical space */
 }
 
 /* Dropdown container styling */
 #chart-container .dropdown-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  /* Dropdown label styling */
+/* Dropdown label styling */
 #chart-container label[for="individual-select"] {
-    margin-right: 10px;
-    font-weight: bold;
-  }
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-  
 /* Dropdown select styling */
 #individual-select {
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+  font-size: 14px;
+  font-family: "Bungee"; /* Use the custom font defined in the HTML*/
+  color: #646968;
+}
 
 /* Chart container styling */
 #main-chart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* SVG styling */
 #main-chart svg {
-    display: block; /* Ensure SVGs behave as block elements */
-    margin: auto; /* Center align inside their container */
-    border-radius: 50%; /* Make SVGs circular */
-    background: #ffffff; /* White background for clarity */
-  }
+  display: block; /* Ensure SVGs behave as block elements */
+  margin: auto; /* Center align inside their container */
+  border-radius: 50%; /* Make SVGs circular */
+  background: #ffffff; /* White background for clarity */
+}
 
 /* Bar styling */
 .bar {
-    transition: fill-opacity 0.2s, stroke-width 0.2s;
-    cursor: pointer;
-  }
+  transition: fill-opacity 0.2s, stroke-width 0.2s;
+  cursor: pointer;
+}
 
 /* Maintain tooltip styling */
 .tooltip {
-    position: absolute;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    visibility: hidden;
-    pointer-events: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 1000;
-  }
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
 
-  /* Data point styling */
-.data-point {
-    transition: r 0.2s, stroke-width 0.2s;
-  }
 
 /* Hour labels styling - now includes time of day labels */
 .hour-label {
-    font-family: 'Bungee', cursive !important; /* Enforce the 'Bungee' font */
-    font-size: 14px;
-    font-weight: 500;
-    fill: #6f8982; /* Grey-green color for subtle contrast */
-  }
-  
-  
+  font-family: 'Bungee', cursive !important; /* Enforce the 'Bungee' font */
+  font-size: 14px;
+  font-weight: 500;
+  fill: #6f8982; /* Grey-green color for subtle contrast */
+}
+
 /* Circular grid lines styling */
 .circular-grid-line {
-    stroke: #ccc;
-    stroke-dasharray: 2, 2, 48;
-    fill: none;
-  }
-  
+  stroke: #ccc;
+  stroke-dasharray: 2, 2, 48;
+  fill: none;
+}
+
 /* Radial grid lines styling */
 .radial-grid-line {
-    stroke: #ccc;
-    stroke-dasharray: 2, 2;
-  }
+  stroke: #ccc;
+  stroke-dasharray: 2, 2;
+}
 
 /* Scale labels styling */
 .scale-label {
-    font-size: 12px;
-    fill: #475d57;
-    fill-opacity: 0.6;
-  }
-  
-  /* Chart title styling
-  .chart-title {
-    text-anchor: middle;
-    font-size: 16px;
-    font-weight: bold;
-  } */
-
-
-/* Responsive adjustments for small screens */
-@media (max-width: 600px) {
-    .biome {
-        width: 90%; /* Make biome elements take full width */
-        font-size: 18px; /* Reduce font size slightly for better fit */
-    }
+  font-size: 12px;
+  fill: #475d57;
+  fill-opacity: 0.6;
 }
 
+/* Map styling with proper height */
 #map { 
-    width: 100%; 
-    height: 1000px; 
-    margin-top: 20px; 
+  flex: 1;
+  min-width: 60%;
+  background-color: #e0e0e0;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding: 0px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding and border in element's size */
+  align-self: stretch; /* Allow stretching */
+  min-height: 100%; /* Take up full height of the container */
+  max-height: 100%; /* Limit maximum height */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .layout-container {
+      flex-direction: column;
+      height: auto;
+  }
+  
+  #map {
+      width: 100%;
+      margin-top: 20px;
+      height: 400px; /* Fixed height on mobile */
+  }
 }

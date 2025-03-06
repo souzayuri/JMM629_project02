@@ -123,7 +123,7 @@ d3.csv('data/activity_summary2.csv', d3.autoType)
             }
             
             // Get the appropriate fill color
-            const fillColor = selectedValue === "all" ? "gray" : biomeColors[biome] || "gray";
+            const fillColor = selectedValue === "all" ? "#c73f9e" : biomeColors[biome] || "#c73f9e";
             
             // Add title to the chart
             // svg.append("text")
