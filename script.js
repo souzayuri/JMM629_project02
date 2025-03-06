@@ -324,8 +324,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieXVyaXNzb3V6YSIsImEiOiJjbTczZG9icHUwazR1MmpvN
 const map = new mapboxgl.Map({
     container: 'map', // ID of the div where the map will be displayed
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-55, -22], // Adjust to match Tapir locations
-    zoom: 5
+    center: [-52, -22], // Adjust to match Tapir locations
+    zoom: 6
 });
 
 // Add zoom and rotation controls
