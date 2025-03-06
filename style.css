@@ -32,25 +32,26 @@ h1 {
 }
 
 /* Wrapper for the video section */
+/*  
 .video-wrapper {
-  display: flex; /* Arrange videos in a horizontal row */
-  justify-content: center; /* Evenly distribute space between videos */
-  gap: 0px; /* Add spacing between video elements */
-  padding: 0px; /* Add padding around the container */
-}
+  display: flex; 
+  justify-content: center;
+  gap: 0px;
+  padding: 0px; 
+} */
 
-.video-container {
-  flex: 2; /* Allocate more space to video */
-  overflow: hidden; /* Prevent overflow */
-}
+/* .video-container {
+  flex: 2; 
+  overflow: hidden; 
+}*/
 
-.video-player {
+/* .video-player {
   width: 50%;
   height: auto;
   object-fit: cover;
-  cursor: pointer; /* Indicate that videos can be clicked */
+  cursor: pointer; 
   border-radius: 4px;
-}
+} */
 
 /* Main container styling */
 #chart-container {
@@ -154,7 +155,7 @@ h1 {
 /* Map styling with proper height */
 #map { 
   flex: 1;
-  min-width: 60%;
+  min-width: 70%;
   background-color: #e0e0e0;
   border: 2px solid #aaa;
   border-radius: 10px;

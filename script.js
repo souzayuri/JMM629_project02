@@ -299,18 +299,12 @@ function drawPolarPlot(svg, tapirs, fillColor) {
 }
 
 // Select all videos in the document
-const videos = document.querySelectorAll('.video-player');
+// const videos = document.querySelectorAll('.video-player');
 
-function playAllVideos() {
-    videos.forEach(video => video.play());
-}
-
-// function pauseAllVideos() {
-//     videos.forEach(video => {
-//         video.pause();
-//         video.currentTime = 0; // Reset to start
-//     });
+// function playAllVideos() {
+ //    videos.forEach(video => video.play());
 // }
+
 
 document.querySelectorAll('.video-container').forEach(container => {
     container.addEventListener('mouseenter', playAllVideos);
