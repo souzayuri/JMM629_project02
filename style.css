@@ -1,0 +1,158 @@
+/* Apply styles to the entire page */
+body {
+    font-family: 'Bungee', cursive !important; /* Use 'Bungee' font with cursive fallback, enforce it */
+    background-color: #f5f5f5; /* Light grey background for a clean look */
+    text-align: center; /* Center all text in the body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Style the main heading (h1) */
+h1 {
+    text-align: center; /* Center align heading */
+    font-family: "Bungee"; /* Use the custom font defined in the HTML*/
+    color: #475d57; /* Dark grey-green color for contrast */
+}
+
+/* Wrapper for the video section */
+.video-wrapper {
+    display: flex; /* Arrange videos in a horizontal row */
+    justify-content: center; /* Evenly distribute space between videos */
+    gap: 20px; /* Add spacing between video elements */
+    padding: 20px; /* Add padding around the container */
+}
+
+/* Each individual video container */
+.video-container {
+    width: 30%; /* Make sure videos take full width of their container */
+    cursor: pointer; /* Indicate that videos can be clicked */
+}
+
+/* Video element styles */
+video {
+    width: 100%; /* Ensure videos fill their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Main container styling */
+#chart-container {
+    padding: 5px; /* Padding around the grid */
+    justify-content: center; /* Center align content */
+    color: #475d57; /* Dark grey-green text color */
+    font-family: "Bungee"; /* Use the custom font defined in the HTML*/
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/* Dropdown container styling */
+#chart-container .dropdown-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown label styling */
+#chart-container label[for="individual-select"] {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  
+/* Dropdown select styling */
+#individual-select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+
+/* Chart container styling */
+#main-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* SVG styling */
+#main-chart svg {
+    display: block; /* Ensure SVGs behave as block elements */
+    margin: auto; /* Center align inside their container */
+    border-radius: 50%; /* Make SVGs circular */
+    background: #ffffff; /* White background for clarity */
+  }
+
+/* Bar styling */
+.bar {
+    transition: fill-opacity 0.2s, stroke-width 0.2s;
+    cursor: pointer;
+  }
+
+/* Maintain tooltip styling */
+.tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  /* Data point styling */
+.data-point {
+    transition: r 0.2s, stroke-width 0.2s;
+  }
+
+/* Hour labels styling - now includes time of day labels */
+.hour-label {
+    font-family: 'Bungee', cursive !important; /* Enforce the 'Bungee' font */
+    font-size: 14px;
+    font-weight: 500;
+    fill: #6f8982; /* Grey-green color for subtle contrast */
+  }
+  
+  
+/* Circular grid lines styling */
+.circular-grid-line {
+    stroke: #ccc;
+    stroke-dasharray: 2, 2, 48;
+    fill: none;
+  }
+  
+/* Radial grid lines styling */
+.radial-grid-line {
+    stroke: #ccc;
+    stroke-dasharray: 2, 2;
+  }
+
+/* Scale labels styling */
+.scale-label {
+    font-size: 12px;
+    fill: #475d57;
+    fill-opacity: 0.6;
+  }
+  
+  /* Chart title styling
+  .chart-title {
+    text-anchor: middle;
+    font-size: 16px;
+    font-weight: bold;
+  } */
+
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+    .biome {
+        width: 90%; /* Make biome elements take full width */
+        font-size: 18px; /* Reduce font size slightly for better fit */
+    }
+}
+
+#map { 
+    width: 100%; 
+    height: 1000px; 
+    margin-top: 20px; 
+}
