@@ -522,12 +522,6 @@ function drawEmptyClockStructure() {
     drawClockStructure(g, radius, adjustedAngle);
 }
 
-// Event handler for video containers
-document.querySelectorAll('.video-container').forEach(container => {
-    container.addEventListener('mouseenter', () => {
-        document.querySelectorAll('video').forEach(video => video.play());
-    });
-});
 
 
 /* ============================= */
