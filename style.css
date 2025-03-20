@@ -1,0 +1,416 @@
+/* Main container styles */
+#chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+/* Three-column layout styles */
+.three-column-container {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Reduced overall gap */
+    margin-top: 50px;
+}
+
+/* Column styling */
+.column {
+    flex: 1;
+}
+
+/* First column with specific width */
+.column:first-child {
+    flex: 0 0 380px; /* Fixed width of 300px, doesn't grow or shrink */
+    max-width: 380px;
+    max-height: 650px;
+    margin-right: 5px;
+    margin-left: 20px; /* Smaller gap after second column */
+    border-radius: 20px;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    box-shadow: 0 0 10px #81444433;
+    background-color: #d5d8ce;
+
+    
+}
+
+/* Second column with smaller width */
+.column:nth-child(2) {
+    flex: 0 0 auto;
+    max-width: 500px;
+    margin-right: 50px; /* Smaller gap after second column */
+    margin-left: 30px; /* Smaller gap after second column */
+    /*box-shadow: 0 0 10px rgba(129, 68, 68, 0.1);*/
+}
+
+/* Third column (map) to fill remaining space */
+.column:nth-child(3) {
+    flex: 1 1 auto; /* Grow to fill remaining space */
+}
+
+/* Video element styles */
+video {
+  width: 100%; /* Adjustable width percentage */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  display: block;
+  margin-top: -5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style the main heading (h1) */
+h1 {
+  text-align: center; /* Center align heading */
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #657470; /* Dark grey-green color for contrast */
+  font-size: 32px;
+  margin-bottom: -10px;
+}
+
+.video-text {
+    width: 100%;
+    text-align: center;
+    font-family: "Iansui", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 19px;
+    color: #657470;
+}
+
+/* Tapir styles */
+.tapir-body {
+  fill: #8b7470;
+  stroke: none;
+  stroke-width: 1px;
+}
+
+.tapir-message {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 17px;
+  fill: #f5f5f5;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+.tapir-finger {
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.tapir-finger:hover {
+  fill: #d5d8ce;
+}
+
+/* Finger label styles */
+.tapir-finger-label {
+  cursor: pointer;
+}
+
+.finger-label-text {
+  fill: #475d57;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 12px;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+/* Dropdown container (hidden) */
+.hidden-dropdowns {
+  display: none;
+}
+
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #475d57;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+.selection-option {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 1s;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+.selection-option:hover {
+  background-color: #eaf7ff;
+}
+
+.selection-option.selected {
+  background-color: #eaf7ff;
+  font-weight: bold;
+}
+
+/* Chart styles */
+#main-chart {
+  margin-top: -20px;
+  padding-top: 0px;
+}
+
+.boundary-circle {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5;
+}
+
+.circular-grid-line {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 0.5;
+  stroke-dasharray: 2, 2;
+}
+
+.radial-grid-line {
+  stroke: #ccc;
+  stroke-width: 0.5;
+  stroke-dasharray: 2, 2;
+}
+
+.hour-label {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 12px;
+  fill: #666;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+.scale-label {
+  text-anchor: middle;
+  font-size: 10px;
+  fill: #999;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+
+/* Tapir selector container */
+.tapir-selector-container {
+  width: 400px;
+  height: 300px;
+  margin-bottom: 0px;
+  padding-bottom: 35px;
+  position: relative;
+}
+
+/* Biome modal styles */
+.biome-modal {
+  color: #475d57;
+  font-size: 10px;
+  display: none;
+  position: fixed;
+  top: 26.5vh;
+  left: 99.5vh;
+  transform: translate(-50%, -50%);
+  background-color: #d5d8ce;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  min-width: 100px;
+}
+
+
+/* Modal title */
+.modal-title {
+  margin-top: 10px;
+}
+
+/* Selection list within modal */
+.selection-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Selection option styling */
+.selection-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+/* Selected option highlight */
+.selection-option.selected {
+  background-color: #e6f3ff;
+}
+
+
+/* Tapir finger classes */
+.tapir-finger {
+  cursor: pointer;
+}
+
+/* Tapir finger label classes */
+.tapir-finger-label {
+  cursor: pointer;
+}
+
+.tapir-finger, .tapir-finger-label, .selection-option, 
+.biome-modal, .modal-title, .selection-list {
+  cursor: url('figures/tapirs_pawn_flipped_colored_fade.svg') 12 12, auto !important;
+  transition: all 0.3s ease;
+}
+
+.tapir-finger:hover, .tapir-finger-label:hover, .selection-option:hover, 
+.biome-modal:hover, .modal-title:hover, .selection-list:hover {
+  filter: brightness(0.99);
+}
+
+/* Hidden dropdowns container */
+.hidden-dropdowns {
+  display: none;
+}
+
+
+/* Apply styles to the entire page */
+body {
+  font-family: 'Bungee', cursive !important; /* Use 'Bungee' font with cursive fallback, enforce it */
+  background-color: #f5f5f5; /* Light grey background for a clean look */
+  text-align: center; /* Center all text in the body */
+  margin: 0; /* Remove default margin */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: cursor 0.3s ease;
+}
+
+/* Layout container setup */
+.layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  min-height: 600px; /* Set a minimum height for the entire layout */
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Let content determine height */
+}
+
+
+/* SVG styling */
+#main-chart svg {
+  display: block; /* Ensure SVGs behave as block elements */
+  margin: auto; /* Center align inside their container */
+  border-radius: 50%; /* Make SVGs circular */
+  background: #ffffff; /* White background for clarity */
+  box-shadow: 0 2px 4px rgba(0.2,0.2,0.2,0.2);
+}
+
+
+/* Tooltip styles */
+.tooltip {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+
+/* Hour labels styling - now includes time of day labels */
+.hour-label {
+  font-family: 'Bungee', cursive !important; /* Enforce the 'Bungee' font */
+  font-size: 14px;
+  font-weight: 500;
+  fill: #6f8982 !important; /* Grey-green color for subtle contrast */
+}
+
+/* Circular grid lines styling */
+.circular-grid-line {
+  stroke: #ccc;
+  stroke-dasharray: 2, 2, 48;
+  fill: none;
+}
+
+/* Radial grid lines styling */
+.radial-grid-line {
+  stroke: #ccc;
+  stroke-dasharray: 2, 2;
+}
+
+/* Scale labels styling */
+.scale-label {
+  font-size: 12px;
+  fill: #475d57;
+  fill-opacity: 0.6;
+}
+
+/* Map styling with proper height */
+#map { 
+  flex: 1;
+  min-width: auto;
+  background-color: #e0e0e0;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin-left: 20px;
+  display: flex;
+  box-sizing: border-box; /* Include padding and border in element's size */
+  align-self: stretch; /* Allow stretching */
+  min-height: 100%; /* Take up full height of the container */
+  max-height: 100%; /* Limit maximum height */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .layout-container {
+      flex-direction: column;
+      height: auto;
+  }
+  
+  #map {
+      width: 100%;
+      margin-top: 20px;
+      height: 400px; /* Fixed height on mobile */
+  }
+}
+
+/* Responsive adjustments for three-column layout */
+@media (max-width: 768px) {
+    .three-column-container {
+        flex-direction: column;
+    }
+    
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .biome-modal {
+    top: 40%;
+    font-size: 9px;
+    padding: 8px;
+    width: 85vw;
+  }
+}

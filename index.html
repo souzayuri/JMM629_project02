@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapir's Diel Activity</title>
+    <link rel="icon" href="figures/tapirs_pawn_flipped_colored.svg" type="image/svg+xml">
+    
+    <!-- mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet" />
+    <!-- JS -->
+
+    <script src="script.js" type="module"></script> <!-- allows to import modules-->
+    <!-- Import style from CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Import preconnect font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="three-column-container">
+        <!-- First column: video-text and video-player -->
+        <div class="column">
+            <div class="video-container">
+                <div class="video-text">
+                    <h1>Tapir's diel activity patterns</h1>
+                    <p>
+                        This application presents the daily activity patterns of tapirs in their natural habitats across three distinct Brazilian biomes. <br><br>
+                         Over the past 25 years, data has been gathered using telemetry collars to track their movements. <br><br>
+                          Here, you can explore this information by clicking on the designated tapir toes icons, which allows to select a specific biome and tapir individual. <br><br>
+                           The application then visualizes the average distance traveled by the selected tapir for each hour throughout the day, displayed in a polar plot format that resembles a watch.
+                    </p>
+                </div>
+                <video class="video-player" src="anta2.MP4" type="video/MP4" loop muted controls>
+                </video>
+            </div>
+        </div>
+        
+        <!-- Second column: layout-container with chart -->
+        <div class="column">
+            <div class="layout-container">
+                <div class="main-content">
+                    <!-- Chart container -->
+                    <div id="chart-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Third column: map -->
+        <div class="column">
+            <div id="map">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
