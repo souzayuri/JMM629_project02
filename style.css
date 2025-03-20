@@ -368,6 +368,30 @@ body {
   fill-opacity: 0.6;
 }
 
+
+/* Biome label styling */
+.biome-label {
+  color: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  pointer-events: none; /* Prevents the label from blocking clicks */
+  font-family: 'Bungee', Arial, sans-serif;
+}
+
+/* You could also define specific styles for each biome type */
+.atlantic-forest {
+  background-color: #2E8B57;
+}
+
+.cerrado {
+  background-color: #CD853F;
+}
+
+.pantanal {
+  background-color: #806D43;
+}
+
+
 /* Map styling with proper height */
 #map { 
   flex: 1;

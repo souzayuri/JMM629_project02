@@ -534,6 +534,7 @@ document.querySelectorAll('.video-container').forEach(container => {
 /* ====== MODIFIED MAPBOX CODE ====== */
 /* ============================= */
 
+
 // Replace with your actual Mapbox Access Token
 mapboxgl.accessToken = 'pk.eyJ1IjoieXVyaXNzb3V6YSIsImEiOiJjbThncGNkbWowb2FjMmpvOXc2ejhmdnAzIn0.9WvDM-DlIVcXImsxIPKeXw';
 
@@ -624,6 +625,8 @@ function addMovementTracksToMap() {
                 .setLngLat(coords)
                 .setHTML(`
                     <strong>Name:</strong> ${closestPointData.individual_name}<br>
+                    <strong>Sex:</strong> ${closestPointData.sex}<br>
+                    <strong>Age:</strong> ${closestPointData.age}<br>
                     <strong>Biome:</strong> ${closestPointData.Biome}<br>
                     <strong>Timestamp:</strong> ${closestPointData.timestamp}<br>
                     <strong>Latitude:</strong> ${closestPointData.Latitude.toFixed(6)}<br>
@@ -700,7 +703,7 @@ function zoomToTrack(feature) {
         duration: 1500, // Animation duration in milliseconds
         pitch: 30, // Maintain 3D view
         bearing: map.getBearing(), // Maintain current bearing
-        zoom: 12.5
+        zoom: 12
     });
 }
 
@@ -840,6 +843,33 @@ class StyleToggleControl {
     }
 }
 
+
+
+// Define the coordinates and colors for the three biomes
+const biomeLocations = [
+    { name: "Atlantic Forest", coordinates: [-52.18, -22.5], class: "atlantic-forest", color: "#2E8B57" },  
+    { name: "Cerrado", coordinates: [-53.76, -21.47], class: "cerrado", color: "#CD853F"  },  
+    { name: "Pantanal", coordinates: [-55.78, -19.2], class: "pantanal", color: "#806D43"  }  
+];
+
+// Add biome markers with permanent labels to the map
+biomeLocations.forEach(biome => {
+    // Add the marker (color can remain in JavaScript since it's specific to mapboxgl.Marker)
+    new mapboxgl.Marker({ color: biome.color })
+        .setLngLat(biome.coordinates)
+        .addTo(map);
+    
+    // Create a custom HTML element for the permanent label
+    const el = document.createElement('div');
+    el.className = `biome-label ${biome.class}`;
+    el.innerHTML = biome.name;
+    
+    // Add the permanent label slightly above the marker
+    new mapboxgl.Marker(el, { anchor: 'bottom', offset: [0, -45] })
+        .setLngLat(biome.coordinates)
+        .addTo(map);
+});
+
 // Create a reset view control using Mapbox's custom control class
 class ResetViewControl {
     onAdd(map) {
@@ -973,7 +1003,7 @@ const getColorForID = (id) => {
 };
 
 // Load CSV data
-d3.csv('data/df_merged_na_coord2.csv', d3.autoType).then(data => {
+d3.csv('data/df_merged_na_coord3.csv', d3.autoType).then(data => {
     console.log("✅ Loaded CSV Data:", data);
 
     // Filter valid coordinate points
@@ -1010,6 +1040,8 @@ d3.csv('data/df_merged_na_coord2.csv', d3.autoType).then(data => {
                     Longitude: point.Longitude || '',
                     Latitude: point.Latitude || '',
                     Biome: point.Biome || '',
+                    sex: point.sex || '',
+                    age: point.age || '',
                     individual_name: point.individual_name || point.individual_local_identifier || ''
                 }))
             });
