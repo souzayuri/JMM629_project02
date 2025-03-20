@@ -216,8 +216,10 @@ h1 {
   font-size: 10px;
   display: none;
   position: fixed;
-  top: 26.5vh;
-  left: 99.5vh;
+  /* top: 26.5vh;*/
+  /* left: 99.5vh;*/
+  top: 26.5%;
+  left: 47%;
   transform: translate(-50%, -50%);
   background-color: #d5d8ce;
   border-radius: 10px;
@@ -403,14 +405,4 @@ body {
         width: 100%;
         margin-bottom: 20px;
     }
-}
-
-/* Mobile-specific adjustments */
-@media screen and (max-width: 768px) {
-  .biome-modal {
-    top: 40%;
-    font-size: 9px;
-    padding: 8px;
-    width: 85vw;
-  }
 }
